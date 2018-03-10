@@ -1,0 +1,23 @@
+$cBtn : rgb(235, 165, 16);
+$primary: rgb(51, 153, 255);
+$second: rgb(102, 255, 51);
+.backimg{
+    height: 100vh;background-image: url('../../assets/img/header.jpg');background-position: center;
+    background-size: cover;width: 100%;background-attachment: fixed;padding-top: 0;
+}
+.fronthead{
+    height: 100vh;background: linear-gradient(to top right, rgba(51, 153, 255, 0.897) 0%, rgba(102, 255, 51, 0.697) 100%);
+    color: white;padding-top: 25vh;position: relative;z-index: 2;
+}
+.btn-new{
+    background-color: $cBtn;color:white;
+}
+.contentProv{
+    padding: 15vh 0;
+}
+.contBlue{
+    background-color: $primary;color: white;
+}
+.contGreen{
+    background-color: $second;color: white;
+}
