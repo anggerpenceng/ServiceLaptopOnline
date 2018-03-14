@@ -2,22 +2,87 @@ $cBtn : rgb(235, 165, 16);
 $primary: rgb(51, 153, 255);
 $second: rgb(102, 255, 51);
 .backimg{
-    height: 100vh;background-image: url('../../assets/img/header.jpg');background-position: center;
-    background-size: cover;width: 100%;background-attachment: fixed;padding-top: 0;
+    height:110vh;background-image: url('../../assets/img/header.jpg');background-position: center;
+    background-size: cover;width: 100%;background-attachment: fixed;padding-top: 0;padding-bottom: 0;
 }
 .fronthead{
-    height: 100vh;background: linear-gradient(to top right, rgba(51, 153, 255, 0.897) 0%, rgba(102, 255, 51, 0.697) 100%);
-    color: white;padding-top: 25vh;position: relative;z-index: 2;
+    height:110vh;background-color: rgba(27, 145, 129, 0.836);
+    color: white;padding-top: 25vh;padding-bottom: 25vh;position: relative;z-index: 2;
+    h3{
+        font-family: 'Roboto Light' , sans-serif;font-size:  25px;
+    }
+    i{
+        font-size: 60px;margin: 10px 20px;
+    }
 }
 .btn-new{
     background-color: $cBtn;color:white;
+    &:hover{
+        background-color: darken($color:$cBtn, $amount: 5%) ;
+    }
+}
+.navigate1{
+    background-color: rgb(219, 67, 67);padding-top:4vh;height: 125px;
+    i{
+        font-size: 70px;
+    }
+}
+.navigate2{
+    background-color: rgb(184, 67, 219);padding-top:4vh;height: 125px;
+    i{
+        font-size: 70px;
+    }
+}
+.navigate3{
+    background-color: rgb(67, 219, 100);padding-top:4vh;height: 125px;
+    box-shadow: 0px 3px 8px rgb(223, 223, 223);
+    i{
+        font-size: 70px;
+    }
+}
+.navcont{
+    background-color: rgb(255, 255, 255);color: rgb(32, 32, 32);padding-top:20px;
+    box-shadow: 0px 3px 8px rgb(223, 223, 223);
+}
+.navup{
+    padding: 10px;color: white;position: fixed;z-index: 3;display: flex;flex-wrap: wrap;width: 100%;
+    background-color: transparent;
+    h1{
+        font-family: 'Roboto', sans-serif;font-size: 25px;
+    }
+    i{
+        font-size: 25px;padding: 4px 10px
+    }
+}
+.innavup{
+    display: flex;flex-wrap: wrap;
+}
+.headbox{
+    width: auto;height: auto;background-image: url('../../assets/img/asus_service.jpg');background-position: center;background-size: cover;
+    position: relative;z-index: 2;padding: 0;
+}
+.holdplacevideo{
+    background-color: rgba(44, 44, 44, 0.685);width: 100%;height: 100%;padding-top: 150px;
+    i{
+        font-size: 60px;
+    }
+}
+.boxonshaw{
+    box-shadow: 0px 3px 8px rgb(223, 223, 223);
 }
 .contentProv{
-    padding: 15vh 0;
+    padding-top: 15vh;padding-bottom: 15vh;
 }
 .contBlue{
     background-color: $primary;color: white;
 }
 .contGreen{
     background-color: $second;color: white;
+}
+.laptop{
+    padding-top: 40px;
+}
+
+@keyframes dropdown {
+    
 }
