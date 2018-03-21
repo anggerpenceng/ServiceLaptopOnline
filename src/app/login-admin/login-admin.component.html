@@ -1,0 +1,34 @@
+<div class="container-fluid" *ngIf="logCondition">
+  <div class="row">
+    <div class="col-12 text-center loadinglog">
+      <img src="../../assets/img/Rolling-1s-108px.gif" alt="">
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 login">
+        <h1 class="text-center display-4">Login Admin</h1>
+        <hr>
+        <form #formLogin="ngForm" (submit)="loginWithEmailandPassword(formLogin)">
+          <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="selectedAdminData.email" placeholder="Jhon_Smoe@example.com">
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="selectedAdminData.password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Login Now</button>
+            <div class="row">
+              <div class="col-6 text-lef">
+                <a [routerLink]="['/']" routerLinkActive="router-link-active" class="t">Back to Home</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+    </div>
+  </div>

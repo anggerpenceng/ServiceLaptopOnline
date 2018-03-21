@@ -6,7 +6,7 @@ $second: rgb(102, 255, 51);
     background-size: cover;width: 100%;background-attachment: fixed;padding-top: 0;padding-bottom: 0;
 }
 .fronthead{
-    height:110vh;background-color: rgba(27, 145, 129, 0.836);
+    height:110vh;background-color: rgba(51, 51, 51, 0.836);
     color: white;padding-top: 25vh;padding-bottom: 25vh;position: relative;z-index: 2;
     h3{
         font-family: 'Roboto Light' , sans-serif;font-size:  25px;
@@ -49,6 +49,9 @@ $second: rgb(102, 255, 51);
     background-color: transparent;
     h1{
         font-family: 'Roboto', sans-serif;font-size: 25px;
+        &:hover{
+            cursor: pointer;
+        }
     }
     i{
         font-size: 25px;padding: 4px 10px
@@ -62,7 +65,7 @@ $second: rgb(102, 255, 51);
     position: relative;z-index: 2;padding: 0;
 }
 .holdplacevideo{
-    background-color: rgba(44, 44, 44, 0.685);width: 100%;height: 100%;padding-top: 150px;
+    background-color: rgba(44, 44, 44, 0.685);width: 100%;height: 100%;padding-top: 150px;padding-bottom: 150px;
     i{
         font-size: 60px;
     }
@@ -81,6 +84,9 @@ $second: rgb(102, 255, 51);
 }
 .laptop{
     padding-top: 40px;
+}
+.footer{
+    background-color: rgb(51, 51, 51);color: white;padding: 20px;
 }
 
 @keyframes dropdown {

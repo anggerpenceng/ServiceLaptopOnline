@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 login">
+      <h1 class="text-center display-4">Login ServTop</h1>
+      <hr>
+      <form>
+        <div class="form-group">
+          <label for="">Email</label>
+          <input type="email" class="form-control" name="inputName" placeholder="Jhon_Smoe@example.com">
+        </div>
+        <div class="form-group">
+          <label for="">Password</label>
+          <input type="password" class="form-control" name="inputName" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">Login Now</button>
+          <div class="row">
+            <div class="col-6 text-lef">
+              <a [routerLink]="['/']" routerLinkActive="router-link-active" class="t">Back to Home</a>
+            </div>
+            <div class="col-6 text-right">
+              <a [routerLink]="['/addUser']" routerLinkActive="router-link-active" class="">Register New </a>
+            </div>
+          </div>
+        </div>
+      </form>
+      <p class="lead text-center">- OR -</p>
+      <button type="button" class="btn btn-google btn-lg">
+        <img src="../../assets/img/LogoGoogle.png" alt="" width="30px">&emsp; Login With Google</button>
+    </div>
+
+  </div>
+</div>

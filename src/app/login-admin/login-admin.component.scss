@@ -1,0 +1,12 @@
+.login{
+    margin-top: 70px;
+}
+.btn-google{
+    background-color: rgb(247, 247, 247);box-shadow: 2px 3px 8px rgba(179, 179, 179, 0.514);
+    &:hover{
+        background-color: rgb(233, 233, 233);box-shadow: 2px 3px 15px rgba(179, 179, 179, 0.514);
+    }
+}
+.loadinglog{
+    padding-top: 270px;position: fixed;z-index: 4;height: 100vh;background-color: rgba(255, 255, 255, 0.815);
+}
