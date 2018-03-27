@@ -5,6 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { DataService } from '../data-hendler/data.service';
 import { loginAdmin } from '../data-hendler/dataModel';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-admin',
@@ -15,7 +16,7 @@ export class LoginAdminComponent implements OnInit {
   logCondition:boolean;
   selectedAdminData: loginAdmin = new loginAdmin();
   constructor(private title: Title , private firebaseAuth: AngularFireAuth , private router: Router
-  , public dataHendler: DataService) { 
+  , public dataHendler: DataService , private toast: ToastrService) { 
     this.logCondition = false;
   }
 
@@ -33,6 +34,7 @@ export class LoginAdminComponent implements OnInit {
     })
     .catch(err => {
       this.hideLoading();
+      this.toast.error('Your Email and Password miss match' , 'Oopps!!');
     })
 
   }

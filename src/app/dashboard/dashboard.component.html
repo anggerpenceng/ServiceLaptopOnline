@@ -1,3 +1,25 @@
-<p>
-  dashboard works!
-</p>
+<div class="nav-fix text-right">
+  {{today | date:'fullDate'}}
+</div>
+<div class="wrap-nav">
+  <div id="nav-show">
+    <h2 class="text-center">Logo Here</h2>
+    <div class="backprof text-center">
+      <img src="../../assets/img/man.png" alt="">
+      <div class="my-3"></div>
+      <p>Logged As: <br> {{userEmail}}</p>
+    </div>
+    <h3><i class="fa fa-wrench" aria-hidden="true"></i> Manage Center</h3>
+    <h3><i class="fa fa-line-chart" aria-hidden="true"></i> View Statistic</h3>
+    <hr>
+    <h3><i class="fa fa-home" aria-hidden="true"></i> Back Home</h3>
+    <h3 (click)="logoutFromThisWebsite()" ><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</h3>
+  </div>
+  <div id="nav-hide">
+  </div>
+  <div id="content">
+    <router-outlet>
+      
+    </router-outlet>
+  </div>
+</div>

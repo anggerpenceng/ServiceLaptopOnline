@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
-
+  userEmail: string;
+  userID: string;
+  today:any;
+  constructor(private fireAuth: AngularFireAuth , private router: Router , private title: Title) { 
+    this.today = Date.now();
+    this.title.setTitle('Dashboard Admin');
+  }
   ngOnInit() {
+    this.fireAuth.authState.subscribe(res => {
+      if (res) {
+        this.userEmail = res.email;
+        this.userID = res.uid;
+      }
+    })
+  }
+
+  logoutFromThisWebsite(){
+    let confhere = confirm('Are you sure to log out??');
+    if (confhere == true) {
+      this.fireAuth.auth.signOut();
+      this.router.navigate(['/']);
+    } else {
+      return false;
+    }
   }
 
 }
