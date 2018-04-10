@@ -1,0 +1,17 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">List Service Center Admin Anda</h1>
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let center of serviceAccess | async">
+      <h3>{{ center.serviceName }}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <button type="button" class="btn btn-primary" [routerLink]="['/CreateService']" routerLinkActive="router-link-active" >Buat Baru</button>
+</div>

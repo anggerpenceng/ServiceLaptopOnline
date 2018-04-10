@@ -1,0 +1,67 @@
+<div class="container-fluid" *ngIf="logCondition">
+    <div class="row">
+      <div class="col-12 text-center loadinglog">
+        <img src="../../assets/img/Rolling-1s-108px.gif" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="!statusCreate">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 sticky-note">
+        <div class="sticky-head text-center">Buat Service Center</div>
+        <form #formCenter="ngForm" class="sticky-body" (submit)="InsertDataFirestore(formCenter)">
+          <div class="form-group">
+            <label for="">Nama Toko / Service Center</label>
+            <input type="text" class="form-control" name="serviceName" #serviceName="ngModel" [ngModel]="centerHomein.serviceName" placeholder="ex: Asus Center">
+          </div>
+          <div class="form-group">
+            <label for="">Email Company</label>
+            <input type="email" class="form-control" placeholder="name@companyname.com" name="email" #email="ngModel" [ngModel]="centerHomein.email">
+          </div>
+          <div class="form-group">
+            <label for="">Nomer Telfon / FAX</label>
+            <input type="number" class="form-control" placeholder="+62 xxxxx" name="number" #number="ngModel" [ngModel]="centerHomein.number">
+          </div>
+          <div class="form-group">
+            <label for="">Alamat Pasti</label>
+            <textarea class="form-control" rows="8" name="address" #address="ngModel" [ngModel]="centerHomein.address"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="tryhere">Buat Sekarang</button>
+            <div class="row">
+              <div class="col-6 text-lef">
+                <a [routerLink]="['/']" routerLinkActive="router-link-active" class="t">Back to Home</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+    </div>
+  </div>
+  
+  <div class="container" *ngIf="statusCreate">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 sticky-note">
+        <div class="sticky-body text-center">
+          <h1 class="display-4" style="color:green">Data Telah Terproses</h1>
+          <div class="my-4"></div>
+          <button type="button" class="btn btn-primary btn-lg btn-block" [routerLink]="['/loginAdmin']" routerLinkActive="router-link-active" > Langkah Selanjutnya </button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+  <div class="container" *ngIf="statusCreateFalse">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 sticky-note">
+        <div class="sticky-body text-center">
+          <h1 class="display-4" style="color:red">Data Gagal Diproses</h1>
+          <div class="my-4"></div>
+          <button type="button" class="btn btn-danger btn-lg btn-block" (click)="BtnTryAgain()"> Coba Lagi </button>
+        </div>
+      </div>
+  
+    </div>
+  </div>

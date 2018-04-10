@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
@@ -18,6 +19,10 @@ import { FirebaseConfig } from './data-hendler/firebaseConfig';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DataService } from './data-hendler/data.service';
 import { HomedashComponent } from './homedash/homedash.component';
+import { AddAdminComponent } from './add-admin/add-admin.component';
+import { UserguidComponent } from './userguid/userguid.component';
+import { ListCenterComponent } from './list-center/list-center.component';
+import { CreateServiceComponent } from './create-service/create-service.component';
 
 
 @NgModule({
@@ -27,12 +32,16 @@ import { HomedashComponent } from './homedash/homedash.component';
     LoginpageComponent,
     LoginAdminComponent,
     DashboardComponent,
-    HomedashComponent
+    HomedashComponent,
+    AddAdminComponent,
+    UserguidComponent,
+    ListCenterComponent,
+    CreateServiceComponent
   ],
   imports: [
     BrowserModule , RouterModule.forRoot(routering), AngularFireModule.initializeApp(FirebaseConfig),
     FormsModule, AngularFirestoreModule.enablePersistence(),AngularFireModule,ToastrModule.forRoot(),
-    CommonModule
+    CommonModule , BrowserAnimationsModule
   ],
   providers: [AngularFireAuth , DataService , ToastrService],
   bootstrap: [AppComponent]

@@ -7,9 +7,9 @@ $second: rgb(102, 255, 51);
 }
 .fronthead{
     height:110vh;background-color: rgba(51, 51, 51, 0.836);
-    color: white;padding-top: 25vh;padding-bottom: 25vh;position: relative;z-index: 2;
+    color: white;padding-top: 23vh;padding-bottom: 25vh;position: relative;z-index: 2;
     h3{
-        font-family: 'Roboto Light' , sans-serif;font-size:  25px;
+        font-family: 'Roboto Light' , sans-serif;font-size:  20px;
     }
     i{
         font-size: 60px;margin: 10px 20px;
@@ -87,6 +87,12 @@ $second: rgb(102, 255, 51);
 }
 .footer{
     background-color: rgb(51, 51, 51);color: white;padding: 20px;
+}
+.btn-primary2{
+    background-color: transparent;border: solid 2px white;color: white;
+    &:hover{
+        background-color: rgba(35, 138, 223, 0.767);
+    }
 }
 
 @keyframes dropdown {

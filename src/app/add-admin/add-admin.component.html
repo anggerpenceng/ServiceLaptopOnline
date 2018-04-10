@@ -1,0 +1,64 @@
+<div class="container-fluid" *ngIf="logCondition">
+  <div class="row">
+    <div class="col-12 text-center loadinglog">
+      <img src="../../assets/img/Rolling-1s-108px.gif" alt="">
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="!statusCreate">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 sticky-note">
+      <div class="sticky-head text-center">Buat Admin Baru</div>
+      <form #formLogin="ngForm" class="sticky-body" (submit)="CreateNewAdmin(formLogin)">
+        <div class="form-group">
+          <label for="">Email</label>
+          <input type="email" class="form-control" #email="ngModel" [(ngModel)]="selectedAdminData.email" name="email" placeholder="Jhon_Smoe@example.com">
+        </div>
+        <div class="form-group">
+          <label for="">Password</label>
+          <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="selectedAdminData.password"
+            placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="chek1"><input type="checkbox" name="name" aria-label="" id="chek1"> Saya menyetujui segala persyaratan yang ada di website ini</label>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">Buat Sekarang</button>
+          <div class="row">
+            <div class="col-6 text-lef">
+              <a [routerLink]="['/']" routerLinkActive="router-link-active" class="t">Back to Home</a> <br>
+              <a [routerLink]="['/loginAdmin']" routerLinkActive="router-link-active" class="t">Sudah Punya Akun</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<div class="container" *ngIf="statusCreate">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 sticky-note">
+      <div class="sticky-body text-center">
+        <h1 class="display-4" style="color:green">Data Telah Terproses</h1>
+        <div class="my-4"></div>
+        <button type="button" class="btn btn-primary btn-lg btn-block" [routerLink]="['/loginAdmin']" routerLinkActive="router-link-active" > Langkah Selanjutnya </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container" *ngIf="statusCreateFalse">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 sticky-note">
+      <div class="sticky-body text-center">
+        <h1 class="display-4" style="color:red">Data Gagal Diproses</h1>
+        <div class="my-4"></div>
+        <button type="button" class="btn btn-danger btn-lg btn-block" (click)="BtnTryAgain()"> Coba Lagi </button>
+      </div>
+    </div>
+
+  </div>
+</div>
