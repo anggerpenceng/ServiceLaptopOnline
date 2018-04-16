@@ -1,17 +1,34 @@
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4 text-center">List Service Center Admin Anda</h1>
-</div>
+  <div class="container text-center">
+    <h1 class="display-4">List Service Center Di Aplikasi ini</h1>
+    <p class="lead">Lihat Service center anda apakah ada di sini?</p>
+  </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-4" *ngFor="let center of serviceAccess | async">
-      <h3>{{ center.serviceName }}</h3>
-    </div>
-  </div>
-</div>
 
-<div class="text-center">
-  <button type="button" class="btn btn-primary" [routerLink]="['/CreateService']" routerLinkActive="router-link-active" >Buat Baru</button>
+    <div class="col-lg-4 my-2" *ngFor="let center of serviceAccess | async">
+      <div class="card text-left border-success">
+        <img class="card-img-top" src="../../assets/img/asus_service.jpg" alt="">
+        <div class="card-body">
+          <h4 class="card-title">{{ center.serviceName }}</h4>
+          <p class="card-text">Alamat :
+            <br> {{ center.address }}</p>
+          <p class="card-text">Email Pengelolah :
+            <br> {{ center.email }}</p>
+          <p class="card-text">Nomer FAX :
+            <br> {{ center.numphone }}</p>
+          <p class="card-text">Deskripsi :
+            <br> {{ center.deskripsi }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 my-2">
+      <div class="card text-left border-primary text-center plus-center" [routerLink]="['/MakeCenter']" routerLinkActive="router-link-active">
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+      </div>
+    </div>
+
+  </div>
 </div>

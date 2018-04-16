@@ -11,7 +11,8 @@ export class HomepageComponent implements OnInit {
   constructor(private title: Title) { }
 
   ngOnInit() {
-    this.title.setTitle('ServiceLaptop')
+    this.title.setTitle('ServiceLaptop');
+    //JQuery Function
   }
 
 }

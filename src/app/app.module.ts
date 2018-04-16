@@ -22,7 +22,7 @@ import { HomedashComponent } from './homedash/homedash.component';
 import { AddAdminComponent } from './add-admin/add-admin.component';
 import { UserguidComponent } from './userguid/userguid.component';
 import { ListCenterComponent } from './list-center/list-center.component';
-import { CreateServiceComponent } from './create-service/create-service.component';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 
 @NgModule({
@@ -35,15 +35,14 @@ import { CreateServiceComponent } from './create-service/create-service.componen
     HomedashComponent,
     AddAdminComponent,
     UserguidComponent,
-    ListCenterComponent,
-    CreateServiceComponent
+    ListCenterComponent
   ],
   imports: [
     BrowserModule , RouterModule.forRoot(routering), AngularFireModule.initializeApp(FirebaseConfig),
     FormsModule, AngularFirestoreModule.enablePersistence(),AngularFireModule,ToastrModule.forRoot(),
     CommonModule , BrowserAnimationsModule
   ],
-  providers: [AngularFireAuth , DataService , ToastrService],
+  providers: [AngularFireAuth , DataService , ToastrService , AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
