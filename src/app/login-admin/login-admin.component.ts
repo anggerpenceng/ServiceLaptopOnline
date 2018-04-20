@@ -30,7 +30,7 @@ export class LoginAdminComponent implements OnInit {
     .signInWithEmailAndPassword(loginAdmin.value.email , loginAdmin.value.password)
     .then(value => {
       this.hideLoading();
-      this.router.navigate(['/ListCenter']);
+      this.router.navigate(['/Dashboard']);
     })
     .catch(err => {
       this.hideLoading();

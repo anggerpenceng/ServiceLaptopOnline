@@ -1,0 +1,41 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Article List</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <button type="button" class="btn btn-success" [routerLink]="['/addArticle']" routerLinkActive="router-link-active" > 
+        <i class="fa fa-plus" aria-hidden="true"></i> Add More</button>
+    </div>
+    <div class="my-5"></div>
+    <div class="col-12" *ngFor="let article of articleAccess | async">
+      <h1>Title: {{article.title}}</h1>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>Catalog</td>
+            <td>{{article.catalog}}</td>
+          </tr>
+          <tr>
+            <td>Source</td>
+            <td>{{article.source}}</td>
+          </tr>
+          <tr>
+            <td>Created Add</td>
+            <td>{{article.date}}</td>
+          </tr>
+          <tr>
+            <td>Likes</td>
+            <td>{{article.like}}</td>
+          </tr>
+          <tr>
+            <td>Article Fild</td>
+            <td>{{article.fild}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

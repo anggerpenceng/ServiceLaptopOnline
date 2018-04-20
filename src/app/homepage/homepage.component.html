@@ -2,9 +2,24 @@
   <div class="container-fluid">
     <div class="row navup justify-content-end">
       <div class="col-xs-12 innavup">
-        <i class="fa fa-windows" aria-hidden="true"></i>
-        <h1 [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</h1>
+        <i class="fa fa-windows" aria-hidden="true" id="window"></i>
+        <h1 [routerLink]="['/login']" routerLinkActive="router-link-active">Login</h1>
       </div>
+    </div>
+    <div class="boxnav">
+      <div class="item">
+        <i class="fa fa-wrench" aria-hidden="true" style="color:red"></i> Service Center</div>
+      <div class="item">
+        <i class="fa fa-file-text-o" aria-hidden="true" style="color:orange"></i> Article List</div>
+      <div class="item">
+        <i class="fa fa-star" aria-hidden="true" style="color:cyan"></i> Top List </div>
+      <div class="item">
+        <i class="fa fa-id-badge" aria-hidden="true" style="color:blueviolet"></i> User Guid</div>
+      <div class="item">
+        <i class="fa fa-android" aria-hidden="true" style="color:green"></i> Download APK</div>
+      <hr class="my-2">
+      <div class="item" [routerLink]="['/loginAdmin']" routerLinkActive="router-link-active">
+        <i class="fa fa-user-secret" aria-hidden="true"></i> Admin Login</div>
     </div>
   </div>
   <div class="fronthead text-center">
@@ -17,30 +32,31 @@
           <i class="fa fa-line-chart" aria-hidden="true"></i>
           <i class="fa fa-building-o" aria-hidden="true"></i>
           <div class="my-3"></div>
-          <h3>Your Laptop in problems? Don't be Panic. You have to find the reson and Fix it. We already serve it in bundle 
-            To find the reson and the best way to fix your laptop problems
+          <h3>Your Laptop in problems? Don't be Panic. You have to find the reson and Fix it. We already serve it in bundle To
+            find the reson and the best way to fix your laptop problems
           </h3>
 
         </div>
         <div class="col-xl-12">
           <div class="my-4"></div>
-          <button type="button" class="btn btn-primary2 btn-lg" [routerLink]="['/UserGuid']" routerLinkActive="router-link-active" >Create Your Own</button>
+          <button type="button" class="btn btn-primary2 btn-lg" [routerLink]="['/UserGuid']" routerLinkActive="router-link-active">Create Your Own</button>
           <button type="button" class="btn btn-primary2 btn-lg">Find Service Center</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<div class="my-5"></div>
-
-<div class="container" style="color:white" id="endless">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-sm-12 col-md-9 col-xl-8 headbox">
-      <div class="holdplacevideo text-center">
-        <i class="fa fa-play" aria-hidden="true"></i>
-      </div>
+    <div class="col-12 subhead text-center">
+      We Give you The Best
     </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="color:white" id="endless">
+
+  <div class="row">
     <div class="col-sm-12 col-md-3 col-xl-4">
       <!-- navbars 1 -->
       <div class="row">
@@ -52,6 +68,9 @@
           <p>See what the perfect solutions of your laptop problems</p>
         </div>
       </div>
+    </div>
+
+    <div class="col-sm-12 col-md-3 col-xl-4">
       <!-- navbars 1 -->
       <div class="row">
         <div class="col-xl-4 navigate2 text-center">
@@ -62,6 +81,8 @@
           <p>Find the best Service center in your City</p>
         </div>
       </div>
+    </div>
+    <div class="col-sm-12 col-md-3 col-xl-4">
       <!-- navbars 1 -->
       <div class="row">
         <div class="col-xl-4 navigate3 text-center">
@@ -74,7 +95,21 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12 headbox">
+      <div class="holdplacevideo text-center">
+        <i class="fa fa-play" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
 
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 subhead2 text-center">
+      We Give you a Service
+    </div>
+  </div>
 </div>
 <div class="container contentProv text-center">
   <div class="row">
@@ -85,38 +120,43 @@
     </div>
   </div>
 </div>
+<div id="toWhite">
+  <div class="contBlue">
+    <div class="container contentProv">
+      <div class="row justify-content-center">
+        <div class="col-md-2 col-xl-2 text-center">
+          <img src="../../assets/img/help.png" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-1 col-xl-1">
 
-<div class="contBlue">
-  <div class="container contentProv">
-    <div class="row justify-content-center">
-      <div class="col-md-2 col-xl-2 text-center">
-        <img src="../../assets/img/help.png" alt="" class="img-fluid">
-      </div>
-      <div class="col-md-1 col-xl-1">
-
-      </div>
-      <div class="col-md-8 col-xl-8">
-        <h1>headimg new</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eum voluptatum nostrum corporis accusantium corrupti
-          tempora vel, illum, dolorum perferendis ducimus voluptatibus totam nobis, placeat at recusandae? Incidunt, in commodi?</p>
+        </div>
+        <div class="col-md-8 col-xl-8">
+          <h1>headimg new</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eum voluptatum nostrum corporis accusantium corrupti
+            tempora vel, illum, dolorum perferendis ducimus voluptatibus totam nobis, placeat at recusandae? Incidunt, in
+            commodi?
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="contGreen">
-  <div class="container contentProv text-right">
-    <div class="row justify-content-center">
-      <div class="col-md-8 col-xl-8">
-        <h1>headimg new</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eum voluptatum nostrum corporis accusantium corrupti
-          tempora vel, illum, dolorum perferendis ducimus voluptatibus totam nobis, placeat at recusandae? Incidunt, in commodi?</p>
-      </div>
-      <div class="col-md-1 col-xl-1">
+  <div class="contGreen">
+    <div class="container contentProv text-right">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-xl-8">
+          <h1>headimg new</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eum voluptatum nostrum corporis accusantium corrupti
+            tempora vel, illum, dolorum perferendis ducimus voluptatibus totam nobis, placeat at recusandae? Incidunt, in
+            commodi?
+          </p>
+        </div>
+        <div class="col-md-1 col-xl-1">
 
-      </div>
-      <div class="col-md-2 col-xl-2 text-center">
-        <img src="../../assets/img/tools.png" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-2 col-xl-2 text-center">
+          <img src="../../assets/img/tools.png" alt="" class="img-fluid">
+        </div>
       </div>
     </div>
   </div>
@@ -144,7 +184,8 @@
       &copy; 2018 Copy Right InSlide, All Right Reserved
     </div>
     <div class="col-sm-12 col-md-6 col-lg-8 lead text-right">
-      Follow us on:&ensp; <i class="fa fa-whatsapp" aria-hidden="true"></i> &ensp;
+      Follow us on:&ensp;
+      <i class="fa fa-whatsapp" aria-hidden="true"></i> &ensp;
       <i class="fa fa-facebook-official" aria-hidden="true"></i>&ensp;
       <i class="fa fa-twitter" aria-hidden="true"></i>&ensp;
       <i class="fa fa-instagram" aria-hidden="true"></i>

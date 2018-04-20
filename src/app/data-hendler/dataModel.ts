@@ -13,6 +13,20 @@ export class serviceCenter{
     like:number;
 }
 
+export class adminCostum{
+    email: string;
+    password: string;
+}
+
+export class Article{
+    catalog: string;
+    date: any;
+    fild: string;
+    like: number;
+    source:string;
+    title: string;
+}
+
 export class FileUplaod{
     key: string;
     name : string;

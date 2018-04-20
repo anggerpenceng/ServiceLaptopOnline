@@ -5,21 +5,29 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://npmcdn.com/angular-toastr/dist/angular-toastr.css');
 
-::-webkit-scrollbar{
-	width:1vh;
-}
-::-webkit-scrollbar-track{
-	background-color: white;
-}
+$primary: #265961;
+$second: #227066;
+$third: #76A665;
+$fourth:#FFDD5C;
 
-::-webkit-scrollbar-thumb{
-	background-color:rgb(0, 247, 255);
-}
+
 
 .btn{
     border-radius: 0 !important;
 }
+.btn-primary{
+	background-color: $second;border-color: $second;
+	&:hover{
+		background-color: darken($color: $second, $amount: 10);
+	}
+}
 
 .form-control{
 	border-radius: 0 !important;
+}
+.background-primary{
+	background-color: $primary;
+}
+.background-second{
+	background-color: $second;
 }

@@ -1,0 +1,70 @@
+$primary: #265961;
+$second: #227066;
+$third: #76A665;
+$fourth:#FFDD5C;
+.g-card{
+    background-color: white;box-shadow: 1px 2px 2px rgba(90, 90, 90, 0.411);
+    padding: 20px; height: auto;margin: 20px 0;position: relative;z-index: 0;
+}
+.smallin{
+    color: #777;font-family: 'Roboto',sans-serif;font-size: 15px;
+}
+.small40{
+    @extend .smallin;
+    font-size: 18px;
+}
+.small40li{
+    @extend .smallin;
+    font-size: 13px;font-family: 'Roboto Light',sans-serif;
+}
+.form-wrapper {
+    max-width: 30%;
+    min-width: 300px;
+    padding: 50px 30px 50px 30px;
+    margin: 50px auto;   
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+  }
+  
+  .form-group {
+    position:relative;  
+  
+    & + .form-group {
+      margin-top: 30px;
+    }
+  }
+  
+  .form-label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: #999;
+    background-color: #fff;
+    z-index: 10;
+    transition: transform 150ms ease-out, font-size 150ms ease-out;
+  }
+  
+  .focused .form-label {
+    transform: translateY(-125%);
+    font-size: .75em;
+    color: $third;
+  }
+  
+  .form-input {
+    position: relative;
+    padding: 12px 0px 5px 0;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    box-shadow: 0 1px 0 0 #e5e5e5;
+    transition: box-shadow 150ms ease-out;
+    
+    &:focus {
+      box-shadow: 0 2px 0 0 $third;
+    }
+  }
+  
+  .form-input.filled {
+    box-shadow: 0 2px 0 0 lightgreen;
+  }

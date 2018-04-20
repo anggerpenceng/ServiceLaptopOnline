@@ -4,3 +4,19 @@
         font-size: 100px;
     }
 }
+.navup1{
+    padding: 10px;color: rgb(100 , 100 , 100);position: fixed;z-index: 3;display: flex;flex-wrap: wrap;width: 100%;
+    background-color: transparent;
+    h1{
+        font-family: 'Roboto', sans-serif;font-size: 25px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    i{
+        font-size: 25px;padding: 4px 10px;cursor: pointer;
+    }
+}
+.innavup1{
+    display: flex;flex-wrap: wrap;
+}

@@ -23,6 +23,9 @@ import { AddAdminComponent } from './add-admin/add-admin.component';
 import { UserguidComponent } from './userguid/userguid.component';
 import { ListCenterComponent } from './list-center/list-center.component';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { ArticleLoginComponent } from './article-login/article-login.component';
+import { ListArticleComponent } from './list-article/list-article.component';
+import { AddArticleComponent } from './add-article/add-article.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { AngularFireDatabase } from 'angularfire2/database';
     HomedashComponent,
     AddAdminComponent,
     UserguidComponent,
-    ListCenterComponent
+    ListCenterComponent,
+    ArticleLoginComponent,
+    ListArticleComponent,
+    AddArticleComponent
   ],
   imports: [
     BrowserModule , RouterModule.forRoot(routering), AngularFireModule.initializeApp(FirebaseConfig),

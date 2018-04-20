@@ -1,3 +1,10 @@
+<div class="container-fluid">
+  <div class="row navup1 justify-content-end">
+    <div class="col-xs-12 innavup1">
+      <h1> <i class="fa fa-home" aria-hidden="true"></i> <span (click)="logOut()"> Logout </span></h1>
+    </div>
+  </div>
+</div>
 <div class="jumbotron jumbotron-fluid">
   <div class="container text-center">
     <h1 class="display-4">List Service Center Di Aplikasi ini</h1>
@@ -7,8 +14,36 @@
 
 <div class="container">
   <div class="row">
-
-    <div class="col-lg-4 my-2" *ngFor="let center of serviceAccess | async">
+    <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+      <div class="card text-white bg-primary" [routerLink]="['/addArticle']" routerLinkActive="router-link-active" style="cursor: pointer;">
+        <div class="card-body">
+          <h4 class="card-title">Add Article</h4>
+          <p class="card-text">Tambahkan Article yang membantu</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+      <div class="card text-white bg-success" [routerLink]="['/listArticle']" routerLinkActive="router-link-active" style="cursor: pointer;">
+        <div class="card-body">
+          <h4 class="card-title">View Article</h4>
+          <p class="card-text">Lihat article yang kamu buat</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+      <div class="card text-white bg-danger">
+        <div class="card-body">
+          <h4 class="card-title">Deleted Article</h4>
+          <p class="card-text">Hapus Artikel yang tidak berguna</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 my-4">
+      <h1 class="text-center display-4">Service List</h1>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 my-2" *ngFor="let center of serviceAccess | async">
       <div class="card text-left border-success">
         <img class="card-img-top" src="../../assets/img/asus_service.jpg" alt="">
         <div class="card-body">
@@ -21,6 +56,7 @@
             <br> {{ center.numphone }}</p>
           <p class="card-text">Deskripsi :
             <br> {{ center.deskripsi }}</p>
+          <button type="button" class="btn btn-success">View Detail</button>
         </div>
       </div>
     </div>

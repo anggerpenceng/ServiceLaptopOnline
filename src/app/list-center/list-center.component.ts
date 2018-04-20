@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-center',
@@ -8,14 +11,26 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 })
 export class ListCenterComponent implements OnInit {
 
-  constructor(private fireStore: AngularFirestore) { 
+  constructor(private fireStore: AngularFirestore , private toast: ToastrService, private router: Router) { 
 
   }
 
   serviceCollection: AngularFirestoreCollection<any> = this.fireStore.collection('serviceCenter');
-  serviceAccess = this. serviceCollection.valueChanges();
+  serviceAccess = this.serviceCollection.valueChanges();
 
   ngOnInit() {
   }
+
+  logOut(){
+    let confirm = window.confirm('Anda yakin mau LogOut');
+    if (confirm == true) {
+      sessionStorage.removeItem('status');
+      sessionStorage.clear();
+      this.router.navigate(['']); 
+    }else{
+      confirm = false;
+    }
+  }
+
 
 }

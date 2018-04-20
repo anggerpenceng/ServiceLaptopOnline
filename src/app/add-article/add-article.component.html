@@ -1,0 +1,34 @@
+<div class="container-fluid headers">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1 class="display-4">Add Your Article here</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <form #formArt="ngForm" (submit)="SendTheArticle(formArt)">
+    <div class="row">
+      <div class="col-xl-4">
+        <div class="form-group">
+          <label for="">Title</label>
+          <input type="text" class="form-control" name="title" #title="ngModel" [(ngModel)]="articleSelect.title"  placeholder="Solusi mengatasi laptop blue screen .etc">
+        </div>
+        <div class="form-group">
+          <label for="">Catalog</label>
+          <input type="text" class="form-control" name="catalog" #catalog="ngModel" [(ngModel)]="articleSelect.catalog" placeholder="blue screen .etc">
+        </div>
+        <div class="form-group">
+          <label for="">Sumber</label>
+          <input type="text" class="form-control" name="source" #source="ngModel" [(ngModel)]="articleSelect.source" placeholder="http://sumberterpercaya.com .etc">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      <div class="col-lg-8">
+        <div class="form-group">
+          <label for="">Fild The Article</label>
+          <textarea class="form-control" name="fild" #fild="ngModel" [(ngModel)]="articleSelect.fild" rows="14" contenteditable="true"></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

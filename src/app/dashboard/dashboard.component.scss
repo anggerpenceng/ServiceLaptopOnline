@@ -1,6 +1,15 @@
+$primary: #265961;
+$second: #227066;
+$third: #76A665;
+$fourth:#FFDD5C;
+
+.bgDark{
+    background-color: rgb(248, 248, 248)
+}
+
 .nav-fix{
-    width: 100%;padding: 10px;position: fixed;background: rgb(252, 252, 252);box-shadow: 2px 3px 3px rgba(133, 133, 133, 0.548);
-    font-family: 'Roboto Light' ,sans-serif;font-size: 23px;
+    width: 100%;padding: 10px;position: fixed;background: $third;font-family: 'Roboto Light' ,sans-serif;font-size: 23px;color: white;
+    z-index: 2;
 }
 .backprof{
     background-image: url('../../assets/img/headerside.jpg');background-position: center;background-size: cover;
@@ -9,17 +18,23 @@
         color: white;
     }
 }
+.the-users{
+    padding: 20px;border-bottom: solid 1px rgb(200 , 200 , 200);font-size: 20px;
+}
+.logohere{
+    font-size: 29px;padding: 5.2px;border-bottom: solid 1px rgb(200 , 200 , 200);
+}
 .wrap-nav{
     width: 100%;display: flex;
     #nav-show{
-        height: 100vh;width: 280px;background: white;position: fixed;z-index: 2;
+        height: 100vh;width: 280px;background: white;position: fixed;z-index: 2;overflow-y: scroll;
         h2{
             padding: 4px 0;
         }
         h3{
             font-family: 'Roboto Light',sans-serif;padding: 20px;font-size: 20px;
             &:hover{
-                background-color: rgb(24, 158, 145);color: white;cursor: pointer;
+                background-color: $second;color: white;cursor: pointer;
             }
         }
     }
@@ -27,6 +42,6 @@
         width: 400px;position: sticky;z-index: 0;
     }
     #content{
-        width: 100%;padding: 70px 30px 0 30px;overflow-y: auto;
+        width: 100%;padding: 70px 20px 0 10px;overflow-y: auto;
     }
 }
