@@ -15,7 +15,7 @@ export class ListCenterComponent implements OnInit {
 
   }
 
-  serviceCollection: AngularFirestoreCollection<any> = this.fireStore.collection('serviceCenter');
+  serviceCollection: AngularFirestoreCollection<any> = this.fireStore.collection('centerHome');
   serviceAccess = this.serviceCollection.valueChanges();
 
   ngOnInit() {

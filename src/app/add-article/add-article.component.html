@@ -25,8 +25,12 @@
       </div>
       <div class="col-lg-8">
         <div class="form-group">
-          <label for="">Fild The Article</label>
-          <textarea class="form-control" name="fild" #fild="ngModel" [(ngModel)]="articleSelect.fild" rows="14" contenteditable="true"></textarea>
+          <label for="">Penyebab Masalah</label>
+          <textarea class="form-control" name="sebab" #sebab="ngModel" [(ngModel)]="articleSelect.sebab" rows="6" contenteditable="true"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="">Solusi Masalah</label>
+          <textarea class="form-control" name="solusi" #solusi="ngModel" [(ngModel)]="articleSelect.solusi" rows="6" contenteditable="true"></textarea>
         </div>
       </div>
     </div>

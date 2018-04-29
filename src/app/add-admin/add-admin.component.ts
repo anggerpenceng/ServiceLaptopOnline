@@ -66,7 +66,6 @@ export class AddAdminComponent implements OnInit {
 
   InsertDataFirestore(centerHome: NgForm){
     this.dataService.InsertDataToFirestore(centerHome.value);
-    this.router.navigate(['/ListCenter']);
   }
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { loginAdmin , serviceCenter, FileUplaod, Article } from './dataModel';
+import { loginAdmin , FileUplaod, Article, serviceCenter} from './dataModel';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import 'firebase/storage';
 import * as firebase from 'firebase';
@@ -22,46 +22,54 @@ export class DataService {
   private basePath = '/upload';
 
   constructor(private fireStore: AngularFirestore , private toast: ToastrService , private router: Router , 
-  private fireBaseDB: AngularFireDatabase ) { }
+  private fireBaseDB: AngularFireDatabase) { }
 
-  CenterColection: AngularFirestoreCollection<any> = this.fireStore.collection('serviceCenter');
+  CenterColection: AngularFirestoreCollection<any> = this.fireStore.collection('centerHome');
   ArticleCollection: AngularFirestoreCollection<any> = this.fireStore.collection('article');
+  postDoc: AngularFirestoreDocument<serviceCenter>;
+  singlePost: Observable<serviceCenter>;
 
   InsertDataToFirestore(serviceCenter:serviceCenter):boolean{
-    this.CenterColection.add(
-      { 
-        serviceName: serviceCenter.serviceName , 
-        address: serviceCenter.address,
-        deskripsi : serviceCenter.deskripsi,
-        numphone: serviceCenter.number,
-        email: serviceCenter.email,
-        like: serviceCenter.like = 0
-      }
-    ).then((valuable) => {
+    this.CenterColection.doc(serviceCenter.email).set({
+      serviceName: serviceCenter.serviceName , 
+      address: serviceCenter.address,
+      deskripsi : serviceCenter.deskripsi,
+      numphone: serviceCenter.number,
+      jambuka: serviceCenter.jambuka,
+      email: serviceCenter.email,
+      like: serviceCenter.like = 0,
+      latitude: serviceCenter.latitude,
+      longtitude: serviceCenter.longtitude,
+      urlMaps: serviceCenter.urlMaps
+      
+    }).then((valuable) => {
       this.toast.success('Success add Data , Nice Work !!');
-      this.router.navigate(['/ListCenter']);
+      this.router.navigate(['/loginAdmin']);
     })
     .catch(err => {
       this.toast.error('Somthing Wrong , ERROR !!');
-      this.router.navigate(['/ListCenter']);
     })
     return true;
   }
 
-  GetOneOfDocumment(email):any{
-    var vardat;
-    var docQry = this.fireStore.collection('serviceCenter').ref;
-    var docData = docQry.where('email' , '==' , email).get()
-    .then(qrySnap => {
-      qrySnap.forEach(doc => {
-        vardat = doc.data();
-      })
+  UpdateDataCenter(serviceCenter: serviceCenter){
+    this.fireStore.doc('centerHome/'+serviceCenter.email).update({
+      serviceName: serviceCenter.serviceName,
+      address: serviceCenter.address,
+      deskripsi : serviceCenter.deskripsi,
+      numphone: serviceCenter.number,
+      jambuka: serviceCenter.jambuka,
+      latitude: serviceCenter.latitude,
+      longtitude: serviceCenter.longtitude,
+      urlMaps: serviceCenter.urlMaps
+      
+    }).then(value => {
+      this.toast.success('Data has been uptodate' , 'Success!');
+      this.router.navigate(['/Dashboard']);
+    }).catch(err => {
+      this.toast.success('Data failed update' , 'Failed!');
+      this.router.navigate(['/Dashboard']);
     })
-    .catch(err => {
-      console.log('Error Reported' , err);
-    })
-    
-    return vardat;
   }
 
   
@@ -69,7 +77,8 @@ export class DataService {
     this.ArticleCollection.add({
       catalog: article.catalog,
       date: article.date = firebase.firestore.FieldValue.serverTimestamp(),
-      fild: article.fild,
+      sebab: article.sebab,
+      solusi: article.solusi,
       like : article.like = 0,
       source: article.source,
       title: article.title
@@ -83,9 +92,9 @@ export class DataService {
   }
 
   //Uplaod image or file to storage firebase
-  pushFileTostorage(fileUpload: FileUplaod, progress: { percentage: number }){
+  pushFileTostorage(fileUpload: FileUplaod, progress: { percentage: number } , email , serviceCenter:serviceCenter){
     const storageRef = firebase.storage().ref();
-    const uploadTask = storageRef.child('${this.basePath}/${fileUpload.file.name}')
+    const uploadTask = storageRef.child('upload/'+fileUpload.file.name)
                        .put(fileUpload.file);
 
     uploadTask.on(
@@ -100,14 +109,18 @@ export class DataService {
       () => {
         fileUpload.url = uploadTask.snapshot.downloadURL;
         fileUpload.name = fileUpload.file.name;
-        this.saveFileData(fileUpload);
+        this.toast.success('file has benn uploaded' , 'Success!');
+        this.saveFileData(fileUpload , email , serviceCenter);
       }
     );
 
   }
 
-  private saveFileData(fileUpload: FileUplaod) {
-    this.fireBaseDB.list(`${this.basePath}/`).push(fileUpload);
+  private saveFileData(fileUpload: FileUplaod , email , serviceCenter:serviceCenter) {
+    this.fireStore.doc('centerHome/'+email).update({
+      fileName: fileUpload.name,
+      urlFile: fileUpload.url
+    });
   }
 
 }

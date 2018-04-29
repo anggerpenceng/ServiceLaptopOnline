@@ -5,12 +5,16 @@ export class loginAdmin {
 
 export class serviceCenter{
     serviceName: string;
-    deskripsi:string;
+    deskripsi:string;   
     email:string;
     password:string;
     number: number;
     address: string;
     like:number;
+    latitude:number;
+    longtitude:number;
+    urlMaps:string;
+    jambuka:string;
 }
 
 export class adminCostum{
@@ -18,10 +22,15 @@ export class adminCostum{
     password: string;
 }
 
+export class centerID{
+    id:string;
+}
+
 export class Article{
     catalog: string;
     date: any;
-    fild: string;
+    sebab:string;
+    solusi:string;
     like: number;
     source:string;
     title: string;

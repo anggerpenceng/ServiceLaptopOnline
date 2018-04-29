@@ -68,3 +68,13 @@ $fourth:#FFDD5C;
   .form-input.filled {
     box-shadow: 0 2px 0 0 lightgreen;
   }
+  .form-label{
+    padding: 10px;box-shadow: 1px 2px 2px rgba(90, 90, 90, 0.411);
+    display: table;color: #999;
+    &:hover{
+      border-bottom: solid 2px $third; cursor: pointer;color: $third;
+    }
+  }
+  input[type="file"] {
+    display: none;
+}

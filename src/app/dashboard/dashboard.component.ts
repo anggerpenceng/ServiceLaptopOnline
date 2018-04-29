@@ -30,6 +30,8 @@ export class DashboardComponent implements OnInit {
     let confhere = confirm('Are you sure to log out??');
     if (confhere == true) {
       this.fireAuth.auth.signOut();
+      sessionStorage.removeItem('email');
+      sessionStorage.clear();
       this.router.navigate(['/']);
     } else {
       return false;

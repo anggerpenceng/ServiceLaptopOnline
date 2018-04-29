@@ -13,12 +13,35 @@
         <div class="sticky-body">
           <div class="form-group">
             <label for="">Email</label>
-            <input type="email" class="form-control" #email="ngModel" [(ngModel)]="centerHomein.email" name="email" placeholder="Jhon_Smoe@example.com">
+            <input type="email" class="form-control" #email="ngModel" [(ngModel)]="centerHomein.email" name="email" placeholder="Jhon_Smoe@example.com" required>
           </div>
           <div class="form-group">
             <label for="">Password</label>
             <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="centerHomein.password"
-              placeholder="Password">
+              placeholder="Password" required>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center" style="margin-top:70px">
+      <div class="col-lg-6 sticky-note">
+        <div class="sticky-head text-center">Data Lokasi Toko</div>
+        <div class="sticky-body">
+          <div class="form-group">
+            <label for="">Latitude</label>
+            <input type="number" class="form-control" #latitude="ngModel" [(ngModel)]="centerHomein.latitude" name="latitude" placeholder="-7.976502"
+            required>
+          </div>
+          <div class="form-group">
+            <label for="">Longtitude</label>
+            <input type="number" class="form-control" name="longtitude" #longtitude="ngModel" [(ngModel)]="centerHomein.longtitude"
+              placeholder="112.628752" required>
+          </div>
+          <div class="form-group">
+            <label for="">Url Share Google Maps</label>
+            <input type="url" class="form-control" name="urlMaps" #urlMaps="ngModel" [(ngModel)]="centerHomein.urlMaps"
+              placeholder="https://yourmaps" required>
           </div>
         </div>
       </div>
@@ -30,7 +53,11 @@
           <div class="sticky-body">
               <div class="form-group">
                   <label for="">Nama Toko / Service Center</label>
-                  <input type="text" class="form-control" name="serviceName" #serviceName="ngModel" [ngModel]="centerHomein.serviceName" placeholder="ex: Asus Center">
+                  <input type="text" class="form-control" name="serviceName" #serviceName="ngModel" [ngModel]="centerHomein.serviceName" placeholder="ex: Asus Center" required>
+                </div>
+                <div class="form-group">
+                  <label for="">Buka pukul</label>
+                  <input type="text" class="form-control" name="jambuka" #jambuka="ngModel" [ngModel]="centerHomein.jambuka" placeholder="ex: 9:30AM - 5PM">
                 </div>
                 <div class="form-group">
                   <label for="">Deskripsi Singkat</label>
